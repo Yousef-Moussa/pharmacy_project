@@ -10,8 +10,7 @@ export class Inventory{
         this.category = category;
         this.dateAdded = new Date();
     }
-getAll(){
-    
-}
+
+
 }
 
