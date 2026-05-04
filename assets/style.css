@@ -1,7 +1,124 @@
 
 
-.yusei-magic-regular {
-  font-family: "Yusei Magic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+nav{
+  background-color: hsl(179, 8%, 84%);
+  width: 95%;
+  margin: 20px auto;
+  border: 3px solid black;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 20px;
+  box-sizing: border-box;
 }
+
+.btn1{
+  font-family: "Yusei Magic";
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(179, 62%, 69%,100%);
+  border-radius: 0px;
+  border-color: hsl(0, 0%, 0%);
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+
+.div4, .div5{
+  display: flex;
+  gap: 15px;
+}
+
+body{
+  background-color: hsl(165, 60%, 78%,100%);
+}
+
+.title{
+  padding: 0px 3.5%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  font-family: "Yusei Magic";
+}
+
+p{
+  font-family: "Zalando Sans";
+}
+
+.outside{
+  background-color: hsl(179, 37%, 59%,100);
+  border-radius: 5px;
+  border: 3px solid black;
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: space-around;
+
+  height: 25rem;
+  width: 95%;
+  padding: 20px 20px;
+
+  box-sizing: border-box;
+}
+
+
+.inside1{ 
+  background: 
+  linear-gradient(hsl(320, 82%, 82%), hsl(320, 82%, 82%)),
+  linear-gradient(hsl(179, 37%, 59%), hsl(179, 37%, 59%));
+  background-blend-mode: multiply;
+  font-weight: bold;
+
+  border: 3px solid black;
+  border-radius: 5%;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+
+  display: flex;
+  
+  width: 47%;
+
+}
+.pinside{
+  margin: auto auto;
+  font-size: 2.5rem;
+  padding: auto auto;
+  display: flex;
+  text-align: center;
+}
+
+.inside2{
+  background: 
+  linear-gradient(hsl(166, 88%, 79%), hsl(166, 88%, 79%)),
+  linear-gradient(hsl(179, 37%, 59%), hsl(179, 37%, 59%));
+  background-blend-mode: multiply;
+  font-weight: bold;
+
+  border: 3px solid black;
+  border-radius: 5%;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+
+  
+  width: 47%;
+}
+
+.input1{
+  background-color: hsl(179, 62%, 69%);
+  padding: 0.5rem 0.5rem;
+  border: 3px solid black;
+  margin: 1.5% 1.5%;
+  font-weight: bold;
+}
+
+.pinside2{
+    font-size: 2rem;
+}
+.pinside2, .input1{
+  text-align: center;
+
+} 
+
+
+
+

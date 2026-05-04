@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css" ></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <p class="yusei-magic-regular">Font: yusei-magic-regular</p>
+
     <!-- <script type="module" src="./src/utils/storage.js" ></script> -->
     
-    <p>Sign up</p>
-    <input id="registerUsername" placeholder="username" /><br/>
-    <input id="registerPassword" placeholder="password"/><br/>
-    <button id="signUpBtn" onclick="" >Create account</button>
+
+    <nav>
+        <div class="div4">
+        <button class="btn1">Home</button><button class="btn1">Products</button>
+        <button class="btn1" >Cart</button><button class="btn1">Orders</button>
+        <button class="btn1">Contacts</button>
+        </div>
+        <div class="div5">
+        <button class="btn1">Create Account</button><button class="btn1">Login</button>
+        </div>
+    </nav>
+
+    <p class="title" >Account login / sign up</p>
     
+    <div class="outside">
+
+    <div class="inside1">
+    <p class="pinside">Create an account <br/> to start making <br/>purchases</p>
+    </div>
+    
+    <div class="inside2" >
+    <p class="pinside2" >Sign up</p>
+    <div class="pinside2">
+    <input class="input1" id="registerUsername" placeholder="Enter your email" /><br/>
+    <input class="input1" id="registerPassword" placeholder="Username"/><br/>
+    <input class="input1" id="registerPassword" placeholder="password"/><br/>
+    <input class="input1" id="registerPassword" placeholder="Confirm password"/><br/>
+   
+    </div>
+     <button class="btn3" id="signUpBtn" onclick="" >Next</button>
+    </div>
+
+    </div>
     <script type="module" src="./src/main.js" ></script>
 </body>
 </html>
