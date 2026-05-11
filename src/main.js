@@ -1,9 +1,16 @@
-import * as productView from './modules/users/UserService.js';
 
 
-export function myElements(){
-const newUsername = document.getElementById("registerUsername");
-const newPassword = document.getElementById("registerPassword");
-const signUpBtn = document.getElementById("signUpBtn");
+
+//signUp/Login
+function replaceDivs(pageToShow){
+    const pages = ["loginPage","signUpPage","homePageNotLogined"]
+
+    for(const page of pages){
+    document.getElementById(page).style.display = "none";
+    }
+    
+    document.getElementById(pageToShow).style.display = "block";
 }
-console.log(productView.printName());
+
+window.replaceDivs = replaceDivs;
+

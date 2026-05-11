@@ -11,17 +11,56 @@
 </head>
 <body>
 
-    <!-- <script type="module" src="./src/utils/storage.js" ></script> -->
-    
 
+<!-- LOGIN PAGE START -->
+    <div id="loginPage" class="login">
     <nav>
         <div class="div4">
-        <button class="btn1">Home</button><button class="btn1">Products</button>
-        <button class="btn1" >Cart</button><button class="btn1">Orders</button>
+        <button onClick="replaceDivs('homePageNotLogined')" class="btn1">Home</button><button class="btn1">Products</button>
+        <button  class="btn1" type="button" disabled>Cart</button>
+        <button class="btn1" type="button" disabled >Orders</button>
         <button class="btn1">Contacts</button>
         </div>
         <div class="div5">
-        <button class="btn1">Create Account</button><button class="btn1">Login</button>
+        <button onClick="replaceDivs('signUpPage')" id="createAccBtn" class="btn1">Create Account</button>
+        <button onClick="replaceDivs('loginPage')" class="btn1">Login</button>
+        </div>
+    </nav>
+
+    <p class="title" >Account login / sign up</p>
+    
+    <div class="outside">
+
+    <div class="inside1">
+    <p class="pinside">Welcome back,<br/>your pharmacy is<br/>ready boss</p>
+    </div>
+    
+    <div class="inside2" >
+    <p class="pinside2" >Log in</p>
+    <div class="pinside2">
+    <input  class="input1" id="registerUsername" placeholder="Enter your email/username" /><br/>
+    <input class="input1" id="registerPassword" placeholder="password"/><br/>
+    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="" >Next</button></div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+<!-- LOGIN PAGE END -->
+
+
+<!-- SIGN UP PAGE START -->
+    <div id="signUpPage" class="signUp">
+    <nav>
+        <div class="div4">
+        <button onClick="replaceDivs('homePageNotLogined')" class="btn1">Home</button><button class="btn1">Products</button>
+        <button  class="btn1" type="button" disabled>Cart</button>
+        <button class="btn1" type="button" disabled >Orders</button>
+        <button class="btn1">Contacts</button>
+        </div>
+        <div class="div5">
+        <button onClick="replaceDivs('signUpPage')" id="createAccBtn" class="btn1">Create Account</button>
+        <button onClick="replaceDivs('loginPage')" class="btn1">Login</button>
         </div>
     </nav>
 
@@ -40,12 +79,36 @@
     <input class="input1" id="registerPassword" placeholder="Username"/><br/>
     <input class="input1" id="registerPassword" placeholder="password"/><br/>
     <input class="input1" id="registerPassword" placeholder="Confirm password"/><br/>
-   
+    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="" >Next</button></div>
     </div>
-     <button class="btn3" id="signUpBtn" onclick="" >Next</button>
+    </div>
     </div>
 
     </div>
+<!-- SIGN UP PAGE END -->
+
+<!-- HOMEPAGE START -->
+    <div id="homePageNotLogined" class="homePage">
+    <nav>
+        <div class="div4">
+        <button onClick="replaceDivs('homePageNotLogined')" class="btn1">Home</button><button class="btn1">Products</button>
+        <button  class="btn1" type="button" disabled>Cart</button>
+        <button class="btn1" type="button" disabled >Orders</button>
+        <button class="btn1">Contacts</button>
+        </div>
+        <div class="div5">
+        <button onClick="replaceDivs('signUpPage')" id="createAccBtn" class="btn1">Create Account</button>
+        <button onClick="replaceDivs('loginPage')" class="btn1">Login</button>
+        </div>
+    </nav>
+
+
+    <div>
+        
+    </div>
+
+    </div>
+<!-- HOMEPAGE END -->
     <script type="module" src="./src/main.js" ></script>
 </body>
 </html>
