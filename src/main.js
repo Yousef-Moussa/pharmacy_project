@@ -1,7 +1,13 @@
 
+// keeping the current page on reload
+window.addEventListener('load', ()=>{
+    const savedPage = localStorage.getItem('pageToShow') || 'homePageNotLogined';
+    replaceDivs(savedPage);
+});
 
 
-//signUp/Login
+
+//Pages traversal (DOM manipulation)
 function replaceDivs(pageToShow){
     const pages = ["loginPage","signUpPage","homePageNotLogined"]
 
@@ -10,6 +16,7 @@ function replaceDivs(pageToShow){
     }
     
     document.getElementById(pageToShow).style.display = "block";
+    localStorage.setItem('pageToShow', pageToShow);
 }
 
 window.replaceDivs = replaceDivs;
