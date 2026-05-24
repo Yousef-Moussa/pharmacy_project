@@ -1,3 +1,6 @@
+/* GENERAL START */
+
+
 .login{
   display: none;
 }
@@ -12,7 +15,7 @@
 
 nav{
   background-color: hsl(179, 8%, 84%);
-  width: 95%;
+  width: 65%;
   margin: 20px auto;
   border: 3px solid black;
 
@@ -51,7 +54,9 @@ button:disabled {
   display: flex;
   gap: 15px;
 }
+/* GENERAL END */
 
+/* LOGIN AND SIGN UP START */
 body{
   background-color: hsl(165, 60%, 78%,100%);
 }
@@ -169,7 +174,66 @@ p{
   background-color: hsl(287, 18%, 31%);
 
 }
+/* LOGIN AND SIGN UP END */
+
+/* HOME PAGE START */
+/* CATEGORIES AREA START */
+.categories{
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.card{
+  width: 80px;
+  text-align: center;
+}
+.card img{
+  width: 80px;
+  height: 80px;
+
+  padding: 5px;
+  border-radius: 14px;
+
+}
+.card img:hover{
+  cursor: pointer;
+  filter: invert(20%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(1.05);
+}
+
+.card p{
+  margin-top: -8px;
+  font-family: "Yusei Magic";
+  text-align: center;
+  margin-left: 10px;
+}
+/* CATEGORIES AREA END */
 
 
+/* Featured START */
+.outerFeatured{
+  background-color: #D4DADA;
+  width: 65%;
+  height: 2.5em;
 
+  border-radius: 5px;
+  border: 3px solid black;
+  margin: 20px auto;
 
+  display: flex;
+  justify-content: space-around;
+
+  height: 25rem;
+  padding: 20px 20px;
+
+  box-sizing: border-box;
+}
+
+.featured{
+  font-family: "Yusei Magic";
+  margin-left: 18%;
+  margin-bottom: -13px;
+}
+
+/* FEATURED END */
+
+/* HOMEPAGE END */

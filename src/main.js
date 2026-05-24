@@ -1,4 +1,17 @@
 
+
+// Search bar
+ const searchBox = document.getElementById("searchBox");
+
+
+    searchBox.addEventListener("keydown", (event) => {
+        if(event.key === "Enter"){
+            console.log(searchBox.value);
+        }
+    });
+
+
+
 // keeping the current page on reload
 window.addEventListener('load', ()=>{
     const savedPage = localStorage.getItem('pageToShow') || 'homePageNotLogined';
