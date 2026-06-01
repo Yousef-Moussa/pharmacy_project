@@ -23,8 +23,9 @@ nav{
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 20px;
+  padding: 30px 30px;
   box-sizing: border-box;
+  
 }
 
 .btn1{
@@ -34,7 +35,6 @@ nav{
   border-radius: 0px;
   border-color: hsl(0, 0%, 0%);
   border: 3px solid black;
-  
 }
 
 button:disabled {
@@ -42,6 +42,9 @@ button:disabled {
   background-color: #ccc !important; 
   color: #666;
   border: 1px solid #999;
+}
+button:disabled:hover{
+  cursor:not-allowed;
 }
 
 
@@ -182,6 +185,7 @@ p{
   display: flex;
   gap: 30px;
   justify-content: center;
+  margin-bottom: -1%;
 }
 .card{
   width: 80px;
@@ -209,7 +213,7 @@ p{
 /* CATEGORIES AREA END */
 
 
-/* Featured START */
+/* Featured SLIDER START */
 .outerFeatured{
   background-color: #D4DADA;
   width: 65%;
@@ -222,10 +226,18 @@ p{
   display: flex;
   justify-content: space-around;
 
-  height: 25rem;
+  height: 25%;
   padding: 20px 20px;
 
   box-sizing: border-box;
+
+
+  /* keeps an element in the normal document flow but allows you to offset it from its original position */
+  /* position: relative; */
+/*  The browser clips the content at the container's edge */
+  overflow: hidden; 
+  
+
 }
 
 .featured{
@@ -234,6 +246,74 @@ p{
   margin-bottom: -13px;
 }
 
-/* FEATURED END */
+.halfCapsuleCert{
+  background-color: #8CA9A5;
+  border: 3px solid black;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.halfCapsuleCert img{
+  width: 95%;
+  height: 85%;
+  margin: 2% 2%;
+  
+  
+}
+.halfCapsuleFied{
+  background-color: hsl(173, 68%, 43%,100%);
+  border: 3px solid black;
+  justify-content: space-around;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.leftSlider{
+  left: 0;
+  width: 2%;
+  margin-right: 7%;
+}
+.leftSlider:hover, .rightSlider:hover{
+  cursor: pointer;
+}
+.rightSlider{
+  width: 2%;
+  right: 0;
+  margin-left: 7%;
+}
+.capsuleBtn{
+  font-family: "Yusei Magic";
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(179, 62%, 69%,100%);
+  border-radius: 0px;
+  border-color: hsl(0, 0%, 0%);
+  border: 3px solid black;
+  margin-bottom: 2%;
+}
+.capsuleBtn:hover{
+  cursor: pointer;
+}
+
+.capsuleCard{
+  display: none;
+}
+
+.capsuleCard.displayCapsule{
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade{
+    from{opacity: .5;}
+    to{opacity: 1;}
+}
+/* FEATURED SLIDER END */
 
 /* HOMEPAGE END */
