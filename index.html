@@ -31,16 +31,17 @@
     
     <div class="outside">
 
-    <div class="inside1">
+    <div style="width: 50%;" class="inside1">
     <p class="pinside">Welcome back,<br/>your pharmacy is<br/>ready boss</p>
     </div>
     
-    <div class="inside2" >
+    <div style="width: 50%;" class="inside2" >
     <p class="pinside2" >Log in</p>
     <div class="pinside2">
-    <input  class="input1" id="registerUsername" placeholder="Enter your email/username" /><br/>
-    <input class="input1" id="registerPassword" placeholder="password"/><br/>
-    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="" >Next</button></div>
+    <input  class="input1" id="email" placeholder="Enter your email" /><br/>
+    <input  class="input1" id="username" placeholder="Enter your username" /><br/>
+    <input class="input1" id="password" placeholder="password"/><br/>
+    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="getLoginCredentials()" >Next</button></div>
     </div>
     </div>
     </div>
@@ -75,11 +76,11 @@
     <div class="inside2" >
     <p class="pinside2" >Sign up</p>
     <div class="pinside2">
-    <input class="input1" id="registerUsername" placeholder="Enter your email" /><br/>
-    <input class="input1" id="registerPassword" placeholder="Username"/><br/>
-    <input class="input1" id="registerPassword" placeholder="password"/><br/>
-    <input class="input1" id="registerPassword" placeholder="Confirm password"/><br/>
-    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="" >Next</button></div>
+    <input class="input1" id="registerEmail" placeholder="Enter your email" /><br/>
+    <input class="input1" id="registerUsername" placeholder="Username"/><br/>
+    <input class="input1" type="password" id="registerPassword" placeholder="password"/><br/>
+    <input class="input1" type="password" id="confirmPassword" placeholder="Confirm password"/><br/>
+    <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="getSignUpCredentials()" >Next</button></div>
     </div>
     </div>
     </div>
@@ -90,23 +91,39 @@
 <!-- HOMEPAGENOTLOGINED START -->
     
     <div id="homePageNotLogined" class="homePage">
-    <img src="/assets/icons/logo.svg">
-    <input type="search" id="searchBox" placeholder="Search here for your desired products"></input>
-    <button class="btn1" >Doctor's receipts</button>
-    <button class="btn1" >Past Orders</button>
+    <div class="parentHeader">
+    <div class="logoBackground" >
+    <img class="myLogo" src="/assets/icons/logo.svg">
+    <div class="searchContainer">
+    <input class="mySearch" 
+            type="search" 
+            id="searchBox" 
+            placeholder="Search here for your desired products" >
+    <img class="searchIcon" src="/assets/icons/searchLogo.svg"/>
+    </div>
+    <button class="btn1" > <img class="doctorReciLogo" src="/assets/icons/doctorReciLogo.svg" > Doctor's receipts</button>
+    <button class="btn1" > <img class="pastOrderLogo" src="/assets/icons/pastOrderLogo.svg" alt=""> Past Orders</button>
+    </div>
     <nav>
         <div class="div4">
         <button onClick="replaceDivs('homePageNotLogined')" class="btn1">Home</button><button class="btn1">Products</button>
-        <button  class="btn1" type="button" disabled>Cart</button>
-        <button class="btn1" type="button" disabled >Orders</button>
+        <button id="cartBtn" class="btn1" type="button" disabled>Cart</button>
+        <button id="ordersBtn" class="btn1" type="button" disabled >Orders</button>
         <button class="btn1">Contacts</button>
         </div>
         <div class="div5">
+         
+        <div id="logOutNav" style="display: flex; gap: 25px;">  
         <button onClick="replaceDivs('signUpPage')" id="createAccBtn" class="btn1">Create Account</button>
         <button onClick="replaceDivs('loginPage')" class="btn1">Login</button>
+        </div> 
+        
+        <div id="logInNav" style="display:none">  
+        <button onClick="logOut()" class="btn1">Log out</button>
+        </div>
         </div>
     </nav>
-
+    </div>
     <!-- Categories -->
     <div class="categories">
 
@@ -228,6 +245,8 @@
 
     </div>
 <!-- HOMEPAGENOTLGINED END -->
+
+
     <script type="module" src="./src/main.js" ></script>
 </body>
 </html>
