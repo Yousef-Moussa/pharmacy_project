@@ -239,6 +239,16 @@ p{
 
 }
 
+.googleBtnContainer{
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: 6em;
+  margin-top: 0.5em;
+  
+}
+
+
 .btn3:hover{
   cursor: pointer;
   background-color: hsl(287, 18%, 31%);

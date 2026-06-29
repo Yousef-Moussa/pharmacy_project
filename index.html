@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pharmacy project</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/style.css" ></link>
+
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <!-- Google client GSI -->
+     <script>
+        function handleGoogleLogin(response){
+        const myPayLoad = JSON.parse(atob(response.credential.split('.')[1]));
+
+        const myGoogleUser = {
+            id: myPayLoad.sub,
+            name: myPayLoad.name,
+            email: myPayLoad.email,
+            picture: myPayLoad.picture
+        
+        };  
+
+        console.log('user loginned credictials:',myGoogleUser.id,myGoogleUser.email,myGoogleUser.name, myGoogleUser.picture);
+
+        window.dispatchEvent(new CustomEvent('googleLogin', {detail:myGoogleUser}))
+        }
+
+     </script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
 </head>
 <body>
 
@@ -41,7 +66,28 @@
     <input  class="input1" id="email" placeholder="Enter your email" /><br/>
     <input  class="input1" id="username" placeholder="Enter your username" /><br/>
     <input class="input1" id="password" placeholder="password"/><br/>
+
+    
     <div class="btn3Container" ><button class="btn3" id="signUpBtn" onclick="getLoginCredentials()" >Next</button></div>
+
+        <!-- google login button -->
+    <div class="googleBtnContainer" id="googleLogin">
+        <div id="g_id_onload"
+            data-client_id="341165078634-9o6g6mkj3nfa2q55nqpo5g3d8qg4hudn.apps.googleusercontent.com"
+            data-callback="handleGoogleLogin"
+            data-auto_prompt="false"> 
+        </div>
+        
+        <div class="g_id_signin"
+            data-type="icon"
+            data-shape="circle"
+            data-theme="filled_black"  
+            data-text="sign_in_with"
+            data-size="large"
+            data-width="250"
+            >
+        </div>
+    </div>
     </div>
     </div>
     </div>
@@ -246,7 +292,7 @@
     </div>
 <!-- HOMEPAGENOTLGINED END -->
 
-
     <script type="module" src="./src/main.js" ></script>
+    
 </body>
 </html>

@@ -3,7 +3,10 @@ import { createCrypto } from "./utils/storage.js"; // for password encryption
 
 
 
-// LOGIN/SIGNUP DATABASE START
+
+
+
+// LOGIN/SIGNUP START
 
 //getting the values form sign up and login.
 
@@ -116,9 +119,6 @@ window.getSignUpCredentials = getSignUpCredentials; // to globalize, as we are u
 // console.log(secret?.password);
 
 
-
-
-
 // opening a login/signup database
 function credentialsDB(){
   return new Promise((resolve, reject ) => {
@@ -128,7 +128,7 @@ function credentialsDB(){
       const db = event.target.result;
       const myOldVersion = event.oldVersion; // 0 if brand new // tells you the previous version number of the DB
 
-    // if the database doesn't exist VERION 1
+    // if the database doesn't exist VERSION 1
     if(myOldVersion < 1){
       const users = db.createObjectStore("users",{keyPath: "id", autoIncrement: true}) // creating objects with primary keeys
       users.createIndex("by_email","email",{unique: true});
@@ -192,7 +192,54 @@ async function updateUser(user) {
   });
 }
 
-// LOGIN/SIGNUP DATABASE END
+
+window.addEventListener('googleLogin', async (e)=> {
+  const myGoogleUser = e.detail;
+
+  const existingUser =  await getUser(myGoogleUser.email);
+
+  if(existingUser){
+    console.log("Welcome back: ", existingUser.username);
+    replaceDivs("homePageNotLogined");
+    document.getElementById("cartBtn").disabled = false;
+    document.getElementById("ordersBtn").disabled = false;
+    document.getElementById("logOutNav").style.display = "none";
+    document.getElementById("logInNav").style.display = "block";
+    
+  }
+  else{
+    // adding new user to the DB
+    await addUser(
+    {
+      email: myGoogleUser.email,
+      username: myGoogleUser.email,
+      password: null,
+      picture: myGoogleUser.picture,
+      googleId: myGoogleUser.id
+    }
+    );
+
+    console.log("New google user registered: ", myGoogleUser.name);
+    replaceDivs("homePageNotLogined");
+    document.getElementById("cartBtn").disabled = false;
+    document.getElementById("ordersBtn").disabled = false;
+    document.getElementById("logOutNav").style.display = "none";
+    document.getElementById("logInNav").style.display = "block";
+    
+  }
+
+  console.log('user loginned credictials:',myGoogleUser.id,myGoogleUser.email,myGoogleUser.name, myGoogleUser.picture);
+  console.log("banana");
+  
+});
+
+
+
+
+
+
+// LOGIN/SIGNUP END
+
 
 
 
@@ -246,10 +293,10 @@ function resetInterval() {
   intervalId = setInterval(nextCapsule, 6000);
 }
 
-// Bug 4: buttons had no event listeners attached
+// Event listeners to the buttons
 document.querySelector(".leftSlider").addEventListener("click", () => {
   prevCapsule();
-  resetInterval(); // Bug 5: manual clicks must reset the timer
+  resetInterval(); 
 });
 
 document.querySelector(".rightSlider").addEventListener("click", () => {
