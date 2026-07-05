@@ -1,11 +1,6 @@
 import { createCrypto } from "./utils/storage.js"; // for password encryption
 
 
-
-
-
-
-
 // LOGIN/SIGNUP START
 
 //getting the values form sign up and login.

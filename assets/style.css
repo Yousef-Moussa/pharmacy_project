@@ -5,8 +5,20 @@
   display: none;
 }
 
+/* .cornerDiagonal{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  background-color: #1B4332;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  pointer-events: none;
+  z-index: 5;
+} */
+
 .homePage{
   display: none;
+  position: relative;
 }
 
 .homePageNotLogined{
@@ -39,11 +51,13 @@
   height: 38px;
 }
 .searchContainer{
+
   position: relative;
   flex: 1;
 }
 
 .mySearch{
+
   width: 100%;
   height: 42px;
   
@@ -74,11 +88,19 @@
   margin-right: 2px;
 }
 
-
+.pastOrderLogo, .doctorReciLogo, .mySearch, .searchContainer, .myLogo, .logoBackground{
+  animation: slideDownFade 1s ease both;
+}
 
 
 
 nav{
+
+  /* slide down animation */
+  animation: slideDownFade 1.5s ease both;
+
+
+  /* formatting */
   background-color: hsl(179, 8%, 84%);
   width: 100%;
   margin: 20px auto;
@@ -123,6 +145,98 @@ button:disabled:hover{
 .div4, .div5{
   display: flex;
   gap: 15px;
+}
+
+
+
+.footer{
+  width: 65%;
+  margin: 30px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: hsl(133, 38%, 21%,100%);
+  border-radius: 16px;
+  animation: slideUpFade 0.8s ease 1s both;
+}
+.footerInner{
+  background-color: hsl(173, 68%, 43%,100%);
+  border-radius: 10px;
+  padding: 25px;
+}
+.footerTopRow{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.footerInfoCard{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  background-color: hsl(179, 8%, 84%,70%);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+}
+.footerInfoIcon{
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.footerInfoText{
+  flex: 1;
+  min-width: 0;
+}
+.footerInfoTitle{
+  font-family: "Zalando Sans", "Yusei Magic";
+  font-size: 0.95rem;
+  margin: 0;
+  white-space: nowrap;
+}
+.footerInfoDesc{
+  font-size: 0.75rem;
+  margin: 2px 0 0;
+  color: hsl(0, 0%, 35%);
+}
+.footerChevron{
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+.footerLinks{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border: 3px black solid;
+  border-radius: 10px;
+  background-color: hsl(180, 7%, 84%,70%);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding: auto;
+}
+.footerCol{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 150px;
+}
+.footerColTitle{
+  font-family: "Zalando Sans", "Yusei Magic";
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.footerCol a{
+  font-family: "Zalando Sans";
+  font-size: 0.8rem;
+  color: hsl(0, 0%, 15%);
+  text-decoration: none;
+}
+.footerCol a:hover{
+  text-decoration: underline;
 }
 /* GENERAL END */
 
@@ -257,8 +371,28 @@ p{
 /* LOGIN AND SIGN UP END */
 
 /* HOME PAGE START */
+
+@keyframes slideDownFade{
+  from {opacity:0; transform: translateY(-40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn{
+  from {opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes slideUpFade{
+  from{ opacity:0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
 /* CATEGORIES AREA START */
 .categories{
+
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -287,11 +421,16 @@ p{
   text-align: center;
   margin-left: 10px;
 }
+
+
+.categories, .card, .card img, .card p {
+  animation: fadeIn 0.5s ease 0.2s both;
+}
 /* CATEGORIES AREA END */
 
 
 /* Featured SLIDER START */
-.outerFeatured{
+.outerFeatured{ 
   background-color: #D4DADA;
   width: 65%;
   height: 2.5em;
@@ -317,13 +456,13 @@ p{
 
 }
 
-.featured{
+.featured{ 
   font-family: "Yusei Magic";
   margin-left: 18%;
   margin-bottom: -13px;
 }
 
-.halfCapsuleCert{
+.halfCapsuleCert{ 
   background-color: #8CA9A5;
   border: 3px solid black;
   border-top-left-radius: 30%;
@@ -334,7 +473,7 @@ p{
   margin-left: 10%;
   margin-right: 10%;
 }
-.halfCapsuleCert img{
+.halfCapsuleCert img{ 
   width: 95%;
   height: 85%;
   margin: 2% 2%;
@@ -387,10 +526,15 @@ p{
   animation-duration: 1.5s;
 }
 
+.outerFeatured, .featured{
+  animation: fadeIn 1s ease 0.4s both;
+}
+
 @keyframes fade{
     from{opacity: .5;}
     to{opacity: 1;}
 }
 /* FEATURED SLIDER END */
+
 
 /* HOMEPAGE END */
