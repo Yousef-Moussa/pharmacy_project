@@ -242,8 +242,13 @@ button:disabled:hover{
 
 /* LOGIN AND SIGN UP START */
 body{
-  background-color: hsl(165, 60%, 78%,100%);
+  /* background-color: hsl(165, 60%, 78%,100%); */
+  background-image: radial-gradient(125% 125% at 50% 90%, hsl(165, 60%, 78%,100%) 40%, hsl(165, 57%, 14%) 100%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
+
+
 
 .title{
   padding: 0px 3.5%;
@@ -369,6 +374,8 @@ p{
 
 }
 /* LOGIN AND SIGN UP END */
+
+
 
 /* HOME PAGE START */
 
@@ -511,7 +518,10 @@ p{
   border-color: hsl(0, 0%, 0%);
   border: 3px solid black;
   margin-bottom: 2%;
+
 }
+
+
 .capsuleBtn:hover{
   cursor: pointer;
 }
@@ -535,6 +545,108 @@ p{
     to{opacity: 1;}
 }
 /* FEATURED SLIDER END */
+
+
+
+/* SERVICES START */
+
+.servicesTitle{
+  font-family: "Yusei Magic";
+  margin-left: 18%;
+  margin-bottom: -13px;
+  animation: fadeIn 1.3s ease 0.4s both;
+}
+
+.services{
+  display: flex;
+  gap: 40px;
+
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease 0.6s both;
+
+  background-color: #D4DADA;
+  width: 65%;
+  height: 2.5em;
+
+  border-radius: 5px;
+  border: 3px solid black;
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: space-around;
+
+  height: 25%;
+  padding: 20px 20px;
+
+  box-sizing: border-box;
+
+
+  /* keeps an element in the normal document flow but allows you to offset it from its original position */
+  /* position: relative; */
+/*  The browser clips the content at the container's edge */
+  overflow: hidden; 
+}
+
+
+
+.serviceCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.serviceCard img{
+  width: 10em;
+  height: 9em;
+  object-fit: cover;
+  border: 3px solid black;
+  border-radius: 35%;
+}
+
+.serviceBtn{
+  font-family: "Yusei Magic";
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(179, 62%, 69%,100%);
+  border-radius: 0px;
+  border-color: hsl(0, 0%, 0%);
+  border: 3px solid black;
+  display: flex;
+}
+
+.serviceBtn:hover{
+  cursor: pointer;
+  background-color: hsl(179, 27%, 44%);
+}
+
+/* SERVICES END */
+
+/* TRENDING SEARCHES START */
+
+.trendingSearches{
+  font-family: "Yusei Magic";
+  width: 65%;
+  margin: 20px auto;
+  animation: fadeIn 1.4s ease 0.8s both;
+  margin-bottom: -10px;
+}
+
+.trendingText{
+  font-family: "Zalando Sans";
+  width: 65%;
+  margin: 20px auto;
+  line-height: 1.5;
+  color: hsl(0, 0%, 0%);
+  animation: fadeIn 1.4s ease 0.8s both;
+
+}
+.trendingText a{
+
+  color: hsl(0, 0%, 0%);
+
+}
+
+/* TRENDING SEARCHES END */
 
 
 /* HOMEPAGE END */
